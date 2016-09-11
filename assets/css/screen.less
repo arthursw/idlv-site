@@ -2,28 +2,31 @@
 
 // Imports
 
-@import url('//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Open+Sans:400,600,400italic,600italic|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300');
+@import url('//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Open+Sans:400,600,400italic,600italic|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300|Source+Code+Pro:400,500,600,700');
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 
 // Variables
 
 @bodyBackgroundColor: #ffffff;
-@baseFontFamily: "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+@baseFontFamily: "Helvetica Neue", "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
 @baseFontColor: #7f8c8d;
-@headerFontFamily: "Roboto Slab", @baseFontFamily;
+@headerFontFamily: "Source Code Pro", "Roboto Slab", @baseFontFamily;
 @headerFontColor: #151515;
 @headerLinkColor: @headerFontColor;
-@secondaryFontFamily: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+@secondaryFontFamily: "Helvetica Neue", "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
 @preFontFamily: "Consolas", Courier, monospace;
-@tableFontFamily: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+@tableFontFamily: "Helvetica Neue", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
 @linkColor: #3498db;
 @linkColorHover: darken(@linkColor, 50%);
 @borderColor: #ecf0f1;
 @subtleColor: rgba(0,0,0,0.05);
-@postmetaColor: #95a5a6;
+@postmetaColor: #02090e;
 @gistBackgroundColor: #fdfdfd;
 
-@maxPageWidth: 600px;
+@maxPageWidth: 960px;
+
+// @highlightColor: #ffe000;
+@highlightColor: hsl(53, 100%, 66%);
 
 // Styles
 
@@ -49,14 +52,15 @@ h1, h2, h3, h4, p, li, dt, dd {
 }
 
 h1, .post-meta {
-    text-align: center
+    // text-align: center
+    text-align: left;
 }
 
 a, a:visited {
     color: @linkColor;
     text-decoration: none;
-    transition: color ease 0.7s;
-    -webkit-transition: color ease 0.7s;
+    // transition: color ease 0.7s;
+    // -webkit-transition: color ease 0.7s;
 }
 
 a:focus, a:hover {
@@ -64,9 +68,14 @@ a:focus, a:hover {
 }
 
 p, li, dt, dd {
-    font-size: 18px;
-    font-weight: 100;
-    line-height: 30px;
+    // font-size: 18px;
+    // font-weight: 100;
+    // line-height: 30px;
+
+    font-size: 15px;
+    color: black;
+    line-height: 21px;
+    font-weight: normal;
 }
 
 dt {
@@ -109,7 +118,8 @@ h1 {
 
 #site-head, article, article.preview, a.archive-link, .article-nav {
     margin: 20px auto;
-    max-width: @maxPageWidth;
+    max-width: 720px;
+    // max-width: @maxPageWidth;
     width: 90%;
 }
 
@@ -127,17 +137,65 @@ article.preview {
     }
 }
 
+div.article-preview {
+    // border-radius: 5px;
+
+    article {
+        margin-bottom: 1em;
+        max-width: 210px;
+
+        h1.post-title {
+            font-size: 16px;
+            font-weight: medium;
+            text-align: left;
+        }
+
+        div.tags {
+            margin-bottom: 0;
+
+            a {
+                font-family: @tableFontFamily;
+                font-size: 15px;
+                color: #999999;
+                &:hover {
+                    color: @linkColor;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        // background-color: #05ffc4;
+        // background-color: #ff555d;
+        background-color: @highlightColor;
+
+        h1.post-title, div.tags a {
+            color: #02090e;
+            // color: white;
+            &:hover {
+                color: #02090e;
+                // color: white;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 /* === Header === */
 
 #blog-logo {
     display: block;
-    max-width: 100px;
+    max-width: 150px;
     margin: 50px auto 0;
     text-align: center;
+    img.bloglogo {
+        border: 5px solid @highlightColor;
+        margin-left: -5px;
+    }
     div.bloglogo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      // border-radius: 50%;
       background-size: cover !important;
       background-position: center center !important;
       background-color: @bodyBackgroundColor;
@@ -162,6 +220,10 @@ h2.blog-description {
     margin-bottom: 2em;
     padding: .5em 1em;
     line-height: 1.2em;
+    font-size: 15px;
+    color: black;
+    line-height: 21px;
+    font-weight: 300;
 }
 
 section.footer-description {
@@ -173,6 +235,13 @@ header.article-header, header.page-header {
 }
 
 /* === Body === */
+
+main.content {
+    // max-width: @maxPageWidth;
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
 section.author, section.share {
     width: 100%;
@@ -246,13 +315,17 @@ blockquote {
     }
 
 .post-meta {
+    display: inline-block;
     color: @postmetaColor;
     font-family: @secondaryFontFamily;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 300;
     margin-top: 1em;
     margin-bottom: 1.2em;
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    &.tags {
+        font-size: 13px;
+    }
 }
 
 .tags {
@@ -314,20 +387,40 @@ img.userimage {
 /* === Footer === */
 
 footer {
-    background: @subtleColor;
+    // background: @subtleColor;
     margin: 4em 0 0;
     padding: 2em 0;
     text-align: center;
+
+    &.site-footer {
+        border-top: 1px solid lightgray;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
 
     footer section {
         font-family: @secondaryFontFamily;
         font-weight: 300;
-        font-size: 18px;
-        margin: 0 auto;
-        max-width: 600px;
+        font-size: 14px;
+
+        text-align: left;
+        
+        // margin: 0 auto;
+        
+        margin-left: 20px;
+        margin-right: 20px;
+
+        max-width: 720px;
         text-transform: uppercase;
         width: 90%;
+
+        span.copyleft {
+            display: inline-block;
+            -webkit-transform: rotate(180deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+            -ms-transform: rotate(180deg); /* IE 9 */
+            transform: rotate(180deg); /* IE 10, Fx 16+, Op 12.1+ */
+        }
     }
 
 footer.post-footer {
@@ -344,7 +437,7 @@ nav {
     margin-bottom: 2em;
     text-align: center;
     margin: 20px auto 2em auto;
-    max-width: @maxPageWidth;
+    // max-width: @maxPageWidth;
     ul {
         list-style: none;
         margin: 0 auto;
@@ -413,10 +506,10 @@ a.archive-link {
 .pagination {
     position: relative;
     width: 90%;
-    max-width: 600px;
+    max-width: 720px;
     font-family: @secondaryFontFamily;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 13px;
     color: @baseFontColor;
     text-align: center;
     padding: 0.5em 0;
@@ -569,7 +662,21 @@ table {
 
 /* === Media Queries === */
 
+@media only screen and (min-width: 500px) and (max-width: 1024px) { 
+
+    main.content {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 500px) { 
+
+    main.content {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
     footer section span.copyright {
         display: block
     }
@@ -592,5 +699,13 @@ table {
 
     .page-number {
         display: block
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 320px) { 
+
+    main.content {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }

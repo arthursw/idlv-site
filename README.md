@@ -1,3 +1,10 @@
+# Custom
+
+Compile & watch less: 
+
+ - cd /Users/Arthur/Projects/IDLV/IDLV-site/content/themes/Vapor/assets/css
+ - autoless .
+
 # Vapor
 
 Minimal and responsive with a focus on typography, *Vapor* is a theme that embodies the core concept of [Ghost](http://ghost.org/)&mdash;it fades into the background, bringing the focus to your content.

@@ -1,22 +1,31 @@
 {{!< default}}
 
 <main class="content" role="main">
+    <div class="row">
+        {{#foreach posts}}
 
-    {{#foreach posts}}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 article-preview">
+            <article class="preview">
+                <a class="post-thumb" href="{{url}}">
+                    <header>
+                        <div> {{#if image}}<img class="post-thumb" src="{{image}}" alt="{{title}}" {{!-- nopin="nopin" --}} />{{/if}} </div>
+                        <div class="tags"> {{#if tags}} {{tags prefix="" separator=", "}} {{/if}} </div>
+                        <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+                        
+                        {{!-- <div class="post-meta"><time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">...</time></div> --}}
+                    </header>
+                </a>
+                {{!-- <section class="post-excerpt">
+                    <p>{{excerpt}}&hellip;</p>
+                    <p class="readmore"><a href="{{url}}">Read this article <i class="fa fa-chevron-circle-right"></i></a></p>
+                </section> --}}
+            </article>
+        </div>
 
-    <article class="preview">
-        <header>
-            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
-            <div class="post-meta"><time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">...</time></div>
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-            <p class="readmore"><a href="{{url}}">Read this article <i class="fa fa-chevron-circle-right"></i></a></p>
-        </section>
-    </article>
+        {{/foreach}}
 
-    {{/foreach}}
-
+    </div>
+    
     {{pagination}}
 
 </main>

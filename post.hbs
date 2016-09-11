@@ -7,9 +7,11 @@
         {{#post}}
 
         <header>
-        {{#if tags}}<div class="post-meta tags">Posted in {{tags}}</div>{{/if}}
+        
         <h1 class="post-title">{{{title}}}</h1>
-        <div class="post-meta"><time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">...</time></div>
+        <div class="post-meta">{{author.name}} / </div>
+        <div class="post-meta"><time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">...</time> / </div>
+        {{#if tags}}<div class="post-meta tags">{{tags}}</div>{{/if}}
         </header>
 
         <section class="post-content">
@@ -17,7 +19,7 @@
         </section>
 
         <section class="share">
-            <p class="info prompt">Share this post</p>
+            <p class="info prompt"></p>
             <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span>
@@ -33,7 +35,7 @@
         </section>
 
         <footer class="post-footer">
-
+{{!-- 
             {{#if author}}
             <section class="author">
                 <div class="authorimage" style="background: url({{author.image}})"></div>
@@ -42,7 +44,7 @@
                 <p class="bio">{{author.bio}}</p>
             </section>
             {{/if}}
-
+ --}}
         </footer>
 
         {{/post}}
