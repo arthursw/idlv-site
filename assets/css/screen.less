@@ -1,5 +1,28 @@
 // This file is horribly organized. I'm going to revamp it in 1.5.
 
+
+// Todo for nav:
+// h2.blog-description {
+//     border-bottom: 1px solid #ecf0f1;
+//     border-top: 1px solid #ecf0f1;
+//     margin-bottom: 2em;
+//     padding: .5em 1em;
+//     line-height: 1.2em;
+//     font-size: 15px;
+//     color: black;
+//     line-height: 21px;
+//     font-weight: 300;
+// }
+// h1.blog-title, h2.blog-description {
+//     text-align: center;
+// }
+// h2 {
+//     font-family: "Helvetica Neue", "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+//     margin-top: 2em;
+//     text-transform: uppercase;
+//     font-weight: 300;
+// }
+
 // Imports
 
 @import url('//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Open+Sans:400,600,400italic,600italic|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300|Source+Code+Pro:400,500,600,700');
@@ -27,6 +50,7 @@
 
 // @highlightColor: #ffe000;
 @highlightColor: hsl(53, 100%, 66%);
+@hoverColor: #ffeb52;
 
 // Styles
 
@@ -57,14 +81,18 @@ h1, .post-meta {
 }
 
 a, a:visited {
-    color: @linkColor;
-    text-decoration: none;
+    // color: black;
+    color: hsla(25,95%,12%,1);
+    text-decoration: underline;
+    font-style: italic;
     // transition: color ease 0.7s;
     // -webkit-transition: color ease 0.7s;
 }
 
 a:focus, a:hover {
-    color: @linkColorHover;
+    // color: @linkColorHover;
+    color: @hoverColor;
+    background-color: black;
 }
 
 p, li, dt, dd {
@@ -123,9 +151,9 @@ h1 {
     width: 90%;
 }
 
-    #site-head img {
-        max-width: 100%
-    }
+#site-head img {
+    max-width: 100%
+}
 
 article.preview {
     margin-bottom: 4em;
@@ -141,13 +169,26 @@ div.article-preview {
     // border-radius: 5px;
 
     article {
-        margin-bottom: 1em;
-        max-width: 210px;
+        // margin-bottom: 1em;
+        // margin: 35px;
+        // max-width: 210px;
 
         h1.post-title {
             font-size: 16px;
             font-weight: medium;
             text-align: left;
+
+            a {
+                color: black;
+                background-color: yellow;
+                padding-right: 5px;
+                padding-left: 5px;
+
+                &:hover {
+                    color: yellow;
+                    background-color: black;
+                }
+            }
         }
 
         div.tags {
@@ -156,11 +197,12 @@ div.article-preview {
             a {
                 font-family: @tableFontFamily;
                 font-size: 15px;
-                color: #999999;
-                &:hover {
-                    color: @linkColor;
-                }
             }
+        }
+
+        img.post-thumb {
+            padding: 3%;
+            width: 94%
         }
     }
 
@@ -169,7 +211,7 @@ div.article-preview {
         // background-color: #ff555d;
         background-color: @highlightColor;
 
-        h1.post-title, div.tags a {
+        h1.post-title {
             color: #02090e;
             // color: white;
             &:hover {
@@ -188,6 +230,11 @@ div.article-preview {
     max-width: 150px;
     margin: 50px auto 0;
     text-align: center;
+
+    &:hover {
+        background-color: white;
+    }
+
     img.bloglogo {
         border: 5px solid @highlightColor;
         margin-left: -5px;
@@ -202,7 +249,7 @@ div.article-preview {
     }
 }
 
-h1.blog-title, h2.blog-description {
+h1.blog-title, h2.blog-description, .nav {
     text-align: center
 }
 
@@ -214,9 +261,9 @@ h1.blog-title {
     padding: 0;
 }
 
-h2.blog-description {
-    border-bottom: 1px solid @borderColor;
-    border-top: 1px solid @borderColor;
+h2.blog-description, .nav {
+    // border-bottom: 1px solid @borderColor;
+    // border-top: 1px solid @borderColor;
     margin-bottom: 2em;
     padding: .5em 1em;
     line-height: 1.2em;
@@ -224,6 +271,21 @@ h2.blog-description {
     color: black;
     line-height: 21px;
     font-weight: 300;
+    li {
+        font-weight: 300;
+        display: inline-block;
+        text-transform: uppercase;
+        a {
+            color: @hoverColor;
+            background-color: black;
+            padding: 5px;
+
+            &:hover {
+                background-color: @hoverColor;
+                color: black;
+            }
+        }
+    }
 }
 
 section.footer-description {
@@ -251,15 +313,28 @@ section.author, section.share {
 
 section.share {
     margin-top: 1em;
+    // margin-top: 5px;
     border-top: 1px solid @borderColor;
-    padding-top: 1em;
+    // padding-top: 1em;
+    padding-top: 7px;
     text-align: right;
+
+    a {
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        &:hover {
+            color: @hoverColor;
+            background-color: white;
+            text-decoration: none;
+        }
+    }
 }
 
-    section.author h4, section.author p, section.share p {
-        padding: 0;
-        margin: 0;
-    }
+section.author h4, section.author p, section.share p {
+    padding: 0;
+    margin: 0;
+}
 
 section.author h4 {
     font-family: @headerFontFamily;
@@ -343,11 +418,11 @@ div.authorimage {
   float: left;
 }
 
-h1.post-title a, h1.blog-title a {
-    color: @headerLinkColor;
-    transition: color ease 0.7s;
-    -webkit-transition: color ease 0.7s;
-}
+// h1.post-title a, h1.blog-title a {
+//     color: @headerLinkColor;
+//     transition: color ease 0.7s;
+//     -webkit-transition: color ease 0.7s;
+// }
 
 h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-title a:hover {
     color: @linkColor;
@@ -426,7 +501,9 @@ footer {
 footer.post-footer {
     background: none;
     border-top: 1px solid @borderColor;
-    margin-top: 1em;
+    // margin-top: 1em;
+
+    margin-top: 5px;
 }
 
 /* === Navigation and Pagination === */

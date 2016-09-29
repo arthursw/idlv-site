@@ -30,12 +30,14 @@ h1,
 }
 a,
 a:visited {
-  color: #3498db;
-  text-decoration: none;
+  color: #3c1a02;
+  text-decoration: underline;
+  font-style: italic;
 }
 a:focus,
 a:hover {
-  color: #02090e;
+  color: #ffeb52;
+  background-color: black;
 }
 p,
 li,
@@ -100,14 +102,20 @@ article.preview p.readmore {
   text-transform: uppercase;
   font-weight: 400;
 }
-div.article-preview article {
-  margin-bottom: 1em;
-  max-width: 210px;
-}
 div.article-preview article h1.post-title {
   font-size: 16px;
   font-weight: medium;
   text-align: left;
+}
+div.article-preview article h1.post-title a {
+  color: black;
+  background-color: yellow;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+div.article-preview article h1.post-title a:hover {
+  color: yellow;
+  background-color: black;
 }
 div.article-preview article div.tags {
   margin-bottom: 0;
@@ -115,20 +123,18 @@ div.article-preview article div.tags {
 div.article-preview article div.tags a {
   font-family: "Helvetica Neue", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 15px;
-  color: #999999;
 }
-div.article-preview article div.tags a:hover {
-  color: #3498db;
+div.article-preview article img.post-thumb {
+  padding: 3%;
+  width: 94%;
 }
 div.article-preview:hover {
   background-color: #ffeb52;
 }
-div.article-preview:hover h1.post-title,
-div.article-preview:hover div.tags a {
+div.article-preview:hover h1.post-title {
   color: #02090e;
 }
-div.article-preview:hover h1.post-title:hover,
-div.article-preview:hover div.tags a:hover {
+div.article-preview:hover h1.post-title:hover {
   color: #02090e;
   text-decoration: underline;
 }
@@ -138,6 +144,9 @@ div.article-preview:hover div.tags a:hover {
   max-width: 150px;
   margin: 50px auto 0;
   text-align: center;
+}
+#blog-logo:hover {
+  background-color: white;
 }
 #blog-logo img.bloglogo {
   border: 5px solid #ffeb52;
@@ -151,7 +160,8 @@ div.article-preview:hover div.tags a:hover {
   background-color: #ffffff;
 }
 h1.blog-title,
-h2.blog-description {
+h2.blog-description,
+.nav {
   text-align: center;
 }
 h1.blog-title {
@@ -161,9 +171,8 @@ h1.blog-title {
   margin-bottom: 30px;
   padding: 0;
 }
-h2.blog-description {
-  border-bottom: 1px solid #ecf0f1;
-  border-top: 1px solid #ecf0f1;
+h2.blog-description,
+.nav {
   margin-bottom: 2em;
   padding: .5em 1em;
   line-height: 1.2em;
@@ -171,6 +180,23 @@ h2.blog-description {
   color: black;
   line-height: 21px;
   font-weight: 300;
+}
+h2.blog-description li,
+.nav li {
+  font-weight: 300;
+  display: inline-block;
+  text-transform: uppercase;
+}
+h2.blog-description li a,
+.nav li a {
+  color: #ffeb52;
+  background-color: black;
+  padding: 5px;
+}
+h2.blog-description li a:hover,
+.nav li a:hover {
+  background-color: #ffeb52;
+  color: black;
 }
 section.footer-description {
   margin-bottom: 1em;
@@ -194,8 +220,18 @@ section.share {
 section.share {
   margin-top: 1em;
   border-top: 1px solid #ecf0f1;
-  padding-top: 1em;
+  padding-top: 7px;
   text-align: right;
+}
+section.share a {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+}
+section.share a:hover {
+  color: #ffeb52;
+  background-color: white;
+  text-decoration: none;
 }
 section.author h4,
 section.author p,
@@ -274,12 +310,6 @@ div.authorimage {
   margin-right: 10px;
   float: left;
 }
-h1.post-title a,
-h1.blog-title a {
-  color: #151515;
-  transition: color ease 0.7s;
-  -webkit-transition: color ease 0.7s;
-}
 h1.post-title a:focus,
 h1.post-title a:hover,
 h1.blog-title a:focus,
@@ -346,7 +376,7 @@ footer section span.copyleft {
 footer.post-footer {
   background: none;
   border-top: 1px solid #ecf0f1;
-  margin-top: 1em;
+  margin-top: 5px;
 }
 /* === Navigation and Pagination === */
 nav {
