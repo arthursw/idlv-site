@@ -81,8 +81,8 @@ h1, .post-meta {
 }
 
 a, a:visited {
-    // color: black;
-    color: hsla(25,95%,12%,1);
+    color: black;
+    // color: hsla(25,95%,12%,1);
     text-decoration: underline;
     font-style: italic;
     // transition: color ease 0.7s;
@@ -180,12 +180,13 @@ div.article-preview {
 
             a {
                 color: black;
-                background-color: yellow;
+                // background-color: yellow;
                 padding-right: 5px;
                 padding-left: 5px;
+                font-style: normal;
 
                 &:hover {
-                    color: yellow;
+                    color: @hoverColor;
                     background-color: black;
                 }
             }
@@ -202,14 +203,17 @@ div.article-preview {
 
         img.post-thumb {
             padding: 3%;
-            width: 94%
+            width: 94%;
+            &:hover {
+                background-color: #ffeb52;
+            }
         }
     }
 
     &:hover {
         // background-color: #05ffc4;
         // background-color: #ff555d;
-        background-color: @highlightColor;
+        // background-color: @highlightColor;
 
         h1.post-title {
             color: #02090e;
@@ -236,7 +240,7 @@ div.article-preview {
     }
 
     img.bloglogo {
-        border: 5px solid @highlightColor;
+        // border: 5px solid @highlightColor;
         margin-left: -5px;
     }
     div.bloglogo {
@@ -279,6 +283,7 @@ h2.blog-description, .nav {
             color: @hoverColor;
             background-color: black;
             padding: 5px;
+            font-style: normal;
 
             &:hover {
                 background-color: @hoverColor;

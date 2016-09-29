@@ -30,7 +30,7 @@ h1,
 }
 a,
 a:visited {
-  color: #3c1a02;
+  color: black;
   text-decoration: underline;
   font-style: italic;
 }
@@ -109,12 +109,12 @@ div.article-preview article h1.post-title {
 }
 div.article-preview article h1.post-title a {
   color: black;
-  background-color: yellow;
   padding-right: 5px;
   padding-left: 5px;
+  font-style: normal;
 }
 div.article-preview article h1.post-title a:hover {
-  color: yellow;
+  color: #ffeb52;
   background-color: black;
 }
 div.article-preview article div.tags {
@@ -128,7 +128,7 @@ div.article-preview article img.post-thumb {
   padding: 3%;
   width: 94%;
 }
-div.article-preview:hover {
+div.article-preview article img.post-thumb:hover {
   background-color: #ffeb52;
 }
 div.article-preview:hover h1.post-title {
@@ -149,7 +149,6 @@ div.article-preview:hover h1.post-title:hover {
   background-color: white;
 }
 #blog-logo img.bloglogo {
-  border: 5px solid #ffeb52;
   margin-left: -5px;
 }
 #blog-logo div.bloglogo {
@@ -192,6 +191,7 @@ h2.blog-description li a,
   color: #ffeb52;
   background-color: black;
   padding: 5px;
+  font-style: normal;
 }
 h2.blog-description li a:hover,
 .nav li a:hover {
