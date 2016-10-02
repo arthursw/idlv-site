@@ -56,6 +56,22 @@
 
 /* === Core Styles === */
 
+.nav-english {
+    display: none;
+}
+
+html.lang-en {
+    .lang-fr {
+        display: none;
+    }
+}
+
+html.lang-fr {
+    .lang-en {
+        display: none;
+    }
+}
+
 body {
     background-color: @bodyBackgroundColor;
     color: @baseFontColor;
@@ -291,6 +307,25 @@ h2.blog-description, .nav {
                 color: black;
             }
         }
+
+        &.nav-english {     // hide language button for those who don't have javascript: everything is in english
+            display: none;
+        }
+    }
+}
+
+// show language button if js:
+html.js {
+    h2.blog-description, .nav {
+        li.nav-english {
+            display: inline-block;
+        }
+    }
+
+    h1.post-title, h1.post-title a, div.article-preview article h1.post-title a{
+        color: transparent;
+        transition: color ease 0.7s;
+        -webkit-transition: color ease 0.7s;
     }
 }
 
@@ -434,6 +469,8 @@ h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-tit
     color: @linkColor;
     text-decoration: none;
 }
+
+
 
 h2 {
     font-family: @secondaryFontFamily;
@@ -803,3 +840,4 @@ table {
         margin-right: 15px;
     }
 }
+
