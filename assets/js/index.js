@@ -22,7 +22,11 @@
         }
         updateDate();
 
-    	$(".nav-english").find("a")[0].href = "";
+        let languageLink = $(".nav-english").find("a")[0]
+        if(languageLink != null) {
+        	languageLink.href = "";
+        }
+    	
   //   	$(document).on('click','.nav-english a', function(e) {
   //   		parent = $(e.target).parent()
 			
