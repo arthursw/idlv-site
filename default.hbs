@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/flexboxgrid.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/photoswipe.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/default-skin/default-skin.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
     {{#if pagination.next}}<link href="{{pageUrl pagination.next}}" rel="prefetch" />{{/if}}
@@ -67,6 +69,8 @@
 
     {{{body}}}
 
+    {{> photoswipe}}
+
     <footer class="site-footer">
         <div class="inner">
             {{!> footer-description}}
@@ -85,8 +89,13 @@
             document.write('<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></'+'script>');
         }
     </script>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/fr.js"></script>
+
+    <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe.js"}}"></script>
+    <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe-ui-default.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/gallery.js"}}"></script>
 
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
