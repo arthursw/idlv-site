@@ -138,7 +138,6 @@ article.preview p.readmore {
 }
 div.article-preview article h1.post-title {
   font-size: 16px;
-  font-weight: medium;
   text-align: left;
   line-height: 1.75;
 }
@@ -149,8 +148,7 @@ div.article-preview article h1.post-title a {
   font-style: normal;
 }
 div.article-preview article h1.post-title a:hover {
-  color: #ffeb52;
-  background-color: black;
+  background-color: #ffeb52;
 }
 div.article-preview article div.tags {
   margin-bottom: 0;
@@ -278,10 +276,6 @@ html.js article.post.translated,
 html.js .nav-english.translated,
 html.js .nav-french.translated {
   opacity: 1;
-}
-html.js div.article-preview article h1.post-title a:hover,
-html.js div.article-preview article h1.post-title a.translated:hover {
-  color: #ffeb52;
 }
 section.footer-description {
   margin-bottom: 1em;
