@@ -456,8 +456,6 @@ footer.site-footer {
   border-top: 1px solid #ecf0f1;
   margin-left: 7%;
   margin-right: 7%;
-}
-.post-template footer.site-footer {
   margin-top: 0;
 }
 footer section {
@@ -530,6 +528,10 @@ nav.menu li:last-child {
     display: block;
   }
 }
+nav.pagination {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
 nav.pagination li:first-child {
   margin-left: 0;
   margin-right: 0;
@@ -555,8 +557,6 @@ a.archive-link {
 }
 .pagination {
   position: relative;
-  width: 90%;
-  max-width: 720px;
   font-family: "Helvetica Neue", "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   text-transform: uppercase;
   font-size: 13px;

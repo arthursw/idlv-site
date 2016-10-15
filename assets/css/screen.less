@@ -648,11 +648,6 @@ footer {
         border-top: 1px solid @borderColor;
         margin-left: 7%;
         margin-right: 7%;
-    }
-}
-
-.post-template {
-    footer.site-footer {
         margin-top: 0;
     }
 }
@@ -734,6 +729,8 @@ nav {
         }
     }
     &.pagination {
+        margin-bottom: 0;
+        border-bottom: 0;
         li {
             &:first-child {
                 margin-left: 0;
@@ -765,8 +762,8 @@ a.archive-link {
 
 .pagination {
     position: relative;
-    width: 90%;
-    max-width: 720px;
+    // width: 90%;
+    // max-width: 720px;
     font-family: @secondaryFontFamily;
     text-transform: uppercase;
     font-size: 13px;
