@@ -10,13 +10,13 @@
 	$(document).ready(function(){
 
 		let updateDate = function() {
-
-			moment.locale(localStorage.getItem('language') == 'french' ? 'fr' : 'en');
+			let lang = localStorage.getItem('language')
+			moment.locale(lang == 'french' ? 'fr' : 'en');
 			$('.post-date').each(function(i, date) {
 				var $date = $(date);
 				$date.html(
 					moment($date.attr('datetime'))
-					.format('dddd, MMMM DD, YYYY')
+					.format(lang == 'french' ? 'dddd, DD MMMM YYYY' : 'dddd, MMMM DD, YYYY')
 					);
 			});
 		}
@@ -100,6 +100,18 @@
 		$("#site-head .nav").append(menuItemJ)
 
 		setTimeout(function(){ menuItemJ.addClass('translated') }, 0)
+		
+		// put content in an inner div
+
+		// let divJ = $("<div>")
+		// divJ.addClass('col-lg-4')
+
+		// let galleryJ = $(".gallery")
+		// galleryJ.addClass('col-lg-8')
+
+		// let contentJ = galleryJ.nextAll()
+		// galleryJ.after(divJ)
+		// divJ.append(contentJ)
 
 		// Hide other language:
 		// let language = QueryString.lang;
