@@ -103,6 +103,47 @@
 		
 		// put content in an inner div
 
+		let galleryJ = $(".gallery")
+		$("article.post header").before(galleryJ)
+
+		// create gallery:
+		
+		// get item classes
+		var classes = galleryJ.attr('itemclasses');
+		let largeImageSize = galleryJ.attr('largeimagesize');
+		let largeImageSizeDefined = false;
+		if(largeImageSize != null) {
+			largeImageSize = largeImageSize.split('x');
+			if(largeImageSize.length == 2) {
+				largeImageSizeDefined = true;
+			}
+		}
+
+		let smallImageSize = galleryJ.attr('smallimagesize');
+		let smallImageSizeDefined = false;
+		if(smallImageSize != null) {
+			smallImageSize = smallImageSize.split('x');
+		}
+
+		// put all img into a linking to the large version of the image
+		// add all item classes to the a item
+		let images = galleryJ.find("img").slice(0);
+
+		let containerJ = $("<div>");
+		containerJ.addClass('row')
+		for(let img of images) {
+			var imgJ = $(img);
+			let aJ = $('<a>');
+			imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgJ.width()) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgJ.height()));
+			aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgJ.width()) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgJ.height()));
+			aJ.attr('href', imgJ.attr('src').replace(/.jpg$/, '_large.jpg'));
+			aJ.append(imgJ);
+			aJ.addClass(classes);
+			containerJ.append(aJ);
+		}
+		galleryJ.append(containerJ);
+
+
 		// let divJ = $("<div>")
 		// divJ.addClass('col-lg-4')
 

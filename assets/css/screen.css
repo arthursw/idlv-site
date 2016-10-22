@@ -72,23 +72,18 @@ main.content section.post-content.v2 {
   line-height: 1.7em;
   font-weight: 300;
 }
-main.content section.post-content .gallery {
+.gallery {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #ecf0f1;
-  padding-bottom: 30px;
 }
-main.content section.post-content .gallery a {
+.gallery a {
   padding-top: .5rem;
   padding-bottom: 0.5em;
 }
-main.content section.post-content .gallery a img {
-  border-radius: 7px;
-}
-main.content section.post-content .gallery a:hover,
-main.content section.post-content .gallery a:visited,
-main.content section.post-content .gallery a:active,
-main.content section.post-content .gallery a:focus {
+.gallery a:hover,
+.gallery a:visited,
+.gallery a:active,
+.gallery a:focus {
   background-color: transparent;
 }
 dt {
@@ -304,9 +299,9 @@ section.share {
 }
 section.share {
   margin-top: 1em;
-  border-top: 1px solid #ecf0f1;
   padding-top: 7px;
   text-align: right;
+  font-size: 0.75em;
 }
 section.share a {
   color: rgba(52, 152, 219, 0.71);
@@ -427,7 +422,8 @@ h2 {
   text-transform: uppercase;
   font-weight: 300;
 }
-section.post-content img {
+section.post-content img,
+.gallery img {
   display: block;
   margin: 0 auto;
   max-width: 100%;

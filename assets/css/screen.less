@@ -142,42 +142,43 @@ main.content {
 
         }
 
-        .gallery {
-
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid @borderColor;
-            padding-bottom: 30px;
-
-            a {
-                padding-top: .5rem;
-                padding-bottom: 0.5em;
-                img {
-                    border-radius: 7px;
-                }
-            }
-            a:hover, a:visited, a:active, a:focus,  {
-                background-color: transparent;
-            }
-
-            // .thumb {
-            //     padding: 30px;
-            // }
-            // display: flex;
-            // flex-wrap: wrap;
-            // flex-direction: row;
-
-            // img, a {
-            //     -webkit-flex-basis: 33.333%;
-            //     -ms-flex-preferred-size: 33.333%;
-            //     flex-basis: 33.333%;
-            //     max-width: 33.333%;
-            // }
-        }
 
     }
 }
 
+
+.gallery {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    // border-bottom: 1px solid @borderColor;
+    // padding-bottom: 30px;
+
+    a {
+        padding-top: .5rem;
+        padding-bottom: 0.5em;
+        // img {
+        //     border-radius: 7px;
+        // }
+    }
+    a:hover, a:visited, a:active, a:focus,  {
+        background-color: transparent;
+    }
+
+    // .thumb {
+    //     padding: 30px;
+    // }
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-direction: row;
+
+    // img, a {
+    //     -webkit-flex-basis: 33.333%;
+    //     -ms-flex-preferred-size: 33.333%;
+    //     flex-basis: 33.333%;
+    //     max-width: 33.333%;
+    // }
+}
 
 dt {
     font-weight: 400
@@ -466,10 +467,11 @@ section.author, section.share {
 section.share {
     margin-top: 1em;
     // margin-top: 5px;
-    border-top: 1px solid @borderColor;
+    // border-top: 1px solid @borderColor;
     // padding-top: 1em;
     padding-top: 7px;
     text-align: right;
+    font-size: 0.75em;
 
     a {
         // color: rgba(62, 92, 154, 0.43);
@@ -613,7 +615,7 @@ h2 {
     font-weight: 300;
 }
 
-section.post-content img {
+section.post-content img, .gallery img {
     display: block;
     margin: 0 auto;
     max-width: 100%;

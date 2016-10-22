@@ -95,16 +95,33 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 // <img> thumbnail element, retrieving thumbnail url
                 img = linkEl.children[0];
             } 
-            var smallImageValues = img.getAttribute('size');
-            var largeImageValues = linkEl.getAttribute('size');
+
+            // find the size of the image: 
+            // 1. look in 'image-size' attribute with format WIDTHxHEIGHT
+            // 2. otherwise use image.clientWidth, image.clientHeight
+            // 3. otherwise (possible?) find in image name (src): get string after underscore, before point (to remove extension) and parse with format WIDTHxHEIGHT
+
+            var smallImageValues = img.getAttribute('imagesize');
+            var smallSize = smallImageValues != null && smallImageValues.length > 0 ? smallImageValues.split('x') : null
+            var largeImageValues = linkEl.getAttribute('imagesize');
+            var largeSize = largeImageValues != null && largeImageValues.length > 0 ? largeImageValues.split('x') : null
 
             var src = img.getAttribute('src');
             var caption = img.getAttribute('caption');
-            
-            if(smallImageValues == null || smallImageValues == '') {
+
+            if(smallImageValues == null || smallImageValues == '' && smallSize == null) {
+                smallSize = [img.clientWidth, img.clientHeight]
+            }
+
+            if(smallImageValues == null || smallImageValues == '' && smallSize == null) {
                 var srcs = src.split('/');
                 var srcNoPath = srcs[srcs.length-1];
-                smallImageValues = srcNoPath.split('_')[1];    
+                let srcNoPaths = srcNoPath.split('_')
+                smallImageValues = srcNoPaths[srcNoPaths.length - 1];
+                smallSize = smallImageValues.split('.')[0].split('x');
+                if(smallSize.length != 2) {
+                    throw new Error('Error while reading image size in file name.')
+                }
             }
             
             var alt = linkEl.getAttribute('href');
@@ -113,15 +130,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 var alts = src.split('/');
                 var altNoPath = srcs[srcs.length-1];
                 largeImageValues = altNoPath.split('_')[1];
+                largeSize = largeImageValues.split('.')[0].split('x');
             }
 
             // var baseName = smallImageValues[0]
-
-            var smallSize = smallImageValues.split('.')[0].split('x');
             var smallSizeX = parseInt(smallSize[0], 10)
             var smallSizeY = parseInt(smallSize[1], 10)
 
-            var largeSize = largeImageValues.split('.')[0].split('x');
             var largeSizeX = parseInt(largeSize[0], 10)
             var largeSizeY = parseInt(largeSize[1], 10)
 
