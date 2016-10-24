@@ -144,17 +144,16 @@
 				aJ.addClass(classes);
 				containerJ.append(aJ);
 
-				let initializeImage = (img, imgWidth, imgHeight, imgJ, aJ) => {
+				imgJ.load( () => {
+					console.log("loaded: " + this.src)
+					let imgWidth = this.width;
+					let imgHeight = this.height;
+					//initializeImage(this, this.width, this.height, imgJ, aJ);
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgHeight));
 					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgHeight));
 					aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
-					return
-				}
-				imgJ.load(function(){
-					console.log("loaded: " + this.src)
-					initializeImage(this, this.width, this.height, imgJ, aJ);
 				});
 
 				// if (!img.complete) {
