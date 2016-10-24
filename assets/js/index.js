@@ -145,9 +145,9 @@
 				containerJ.append(aJ);
 
 				imgJ.load( () => {
-					console.log("loaded: " + this.src)
-					let imgWidth = this.width;
-					let imgHeight = this.height;
+					console.log("loaded: " + img.src)
+					let imgWidth = img.width;
+					let imgHeight = img.height;
 					//initializeImage(this, this.width, this.height, imgJ, aJ);
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
