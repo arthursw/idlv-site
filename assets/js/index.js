@@ -144,7 +144,7 @@
 				aJ.addClass(classes);
 				containerJ.append(aJ);
 
-				let initializeImage = (img, imgWidth, imgHeight imgJ, aJ) => {
+				let initializeImage = (img, imgWidth, imgHeight, imgJ, aJ) => {
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgHeight));
