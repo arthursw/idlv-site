@@ -144,9 +144,7 @@
 				aJ.addClass(classes);
 				containerJ.append(aJ);
 
-				let initializeImage = (img, imgJ, aJ, alreadyLoaded) => {
-					let imgWidth = alreadyLoaded ? imgJ.width() : img.clientWidth
-					let imgHeight = alreadyLoaded ? imgJ.height() : img.clientHeight
+				let initializeImage = (img, imgWidth, imgHeight imgJ, aJ) => {
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgHeight));
@@ -155,8 +153,8 @@
 					return
 				}
 				imgJ.load(function(){
-					console.log("loaded: " + img.src)
-					initializeImage(this, imgJ, aJ);
+					console.log("loaded: " + this.src)
+					initializeImage(this, this.width, this.height, imgJ, aJ);
 				});
 
 				// if (!img.complete) {
