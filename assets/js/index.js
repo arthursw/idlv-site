@@ -141,7 +141,7 @@
 				var imgJ = $(img);
 				let aJ = $('<a>');
 
-				let initializeImage = function() {
+				let initializeImage = function(img, imgJ, aJ) {
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgJ.width()) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgJ.height()));
 					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgJ.width()) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgJ.height()));
 					aJ.attr('href', imgJ.attr('src').replace(/.jpg$/, '_large.jpg'));
@@ -152,10 +152,10 @@
 
 				if (!img.complete) {
 					imgJ.load(function(){
-						initializeImage();
+						initializeImage(img, imgJ, aJ);
 					});
 				} else {
-					initializeImage();
+					initializeImage(img, imgJ, aJ);
 				}
 			}
 			galleryJ.append(containerJ);	
