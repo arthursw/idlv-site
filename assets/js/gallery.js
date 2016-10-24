@@ -109,11 +109,11 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             var src = img.getAttribute('src');
             var caption = img.getAttribute('caption');
 
-            if(smallImageValues == null || smallImageValues == '' && smallSize == null) {
+            if((smallImageValues == null || smallImageValues == '') && smallSize == null) {
                 smallSize = [img.clientWidth, img.clientHeight]
             }
 
-            if(smallImageValues == null || smallImageValues == '' && smallSize == null) {
+            if((smallImageValues == null || smallImageValues == '') && smallSize == null) {
                 var srcs = src.split('/');
                 var srcNoPath = srcs[srcs.length-1];
                 let srcNoPaths = srcNoPath.split('_')
