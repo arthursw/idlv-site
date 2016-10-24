@@ -144,12 +144,15 @@
 				aJ.addClass(classes);
 				containerJ.append(aJ);
 
-				let initializeImage = function(img, imgJ, aJ) {
+				let initializeImage = (img, imgJ, aJ, alreadyLoaded) => {
+					let imgWidth = alreadyLoaded ? imgJ.width() : img.clientWidth
+					let imgHeight = alreadyLoaded ? imgJ.height() : img.clientHeight
 					console.log("initializeImage: " + img.src)
-					console.log("initializeImage: " + img.clientWidth + ", " + img.clientHeight)
-					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : img.clientWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : img.clientHeight));
-					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * img.clientWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * img.clientHeight));
+					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
+					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgHeight));
+					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgHeight));
 					aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
+					return
 				}
 
 				if (!img.complete) {
@@ -160,7 +163,7 @@
 					});
 				} else {
 					console.log("already loaded:" + img.src)
-					initializeImage(img, imgJ, aJ);
+					initializeImage(img, imgJ, aJ, true);
 				}
 			}
 			galleryJ.append(containerJ);	
