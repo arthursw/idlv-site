@@ -142,6 +142,7 @@
 				let aJ = $('<a>');
 
 				let initializeImage = function(img, imgJ, aJ) {
+					console.log("initializeImage: " + img.src)
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgJ.width()) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgJ.height()));
 					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgJ.width()) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgJ.height()));
 					aJ.attr('href', imgJ.attr('src').replace(/.jpg$/, '_large.jpg'));
@@ -151,10 +152,13 @@
 				}
 
 				if (!img.complete) {
+					console.log("not yet loaded: " + img.src)
 					imgJ.load(function(){
+						console.log("loaded: " + img.src)
 						initializeImage(img, imgJ, aJ);
 					});
 				} else {
+					console.log("already loaded:" + img.src)
 					initializeImage(img, imgJ, aJ);
 				}
 			}
