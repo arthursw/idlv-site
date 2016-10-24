@@ -146,8 +146,8 @@
 				let initializeImage = function(img, imgJ, aJ) {
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + img.clientWidth + ", " + img.clientHeight)
-					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : img.clientWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgJ.clientHeight));
-					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * img.clientWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgJ.clientHeight));
+					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : img.clientWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : img.clientHeight));
+					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * img.clientWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * img.clientHeight));
 					aJ.attr('href', imgJ.attr('src').replace(/.jpg$/, '_large.jpg'));
 					aJ.addClass(classes);
 				}
