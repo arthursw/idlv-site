@@ -148,6 +148,8 @@
 					console.log("loaded: " + img.src)
 					let imgWidth = img.width;
 					let imgHeight = img.height;
+					console.log(imgJ)
+					console.log(aJ)
 					//initializeImage(this, this.width, this.height, imgJ, aJ);
 					console.log("initializeImage: " + img.src)
 					console.log("initializeImage: " + imgWidth + ", " + imgHeight)
@@ -155,6 +157,7 @@
 					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgHeight));
 					aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
 				});
+				imgJ.load();
 
 				// if (!img.complete) {
 				// 	console.log("not yet loaded: " + img.src)
