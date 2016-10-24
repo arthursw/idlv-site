@@ -154,17 +154,18 @@
 					aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
 					return
 				}
+				imgJ.load(function(){
+					console.log("loaded: " + img.src)
+					initializeImage(this, imgJ, aJ);
+				});
 
-				if (!img.complete) {
-					console.log("not yet loaded: " + img.src)
-					imgJ.load(function(){
-						console.log("loaded: " + img.src)
-						initializeImage(img, imgJ, aJ);
-					});
-				} else {
-					console.log("already loaded:" + img.src)
-					initializeImage(img, imgJ, aJ, true);
-				}
+				// if (!img.complete) {
+				// 	console.log("not yet loaded: " + img.src)
+					
+				// } else {
+				// 	console.log("already loaded:" + img.src)
+				// 	initializeImage(img, imgJ, aJ, true);
+				// }
 			}
 			galleryJ.append(containerJ);	
 		}
