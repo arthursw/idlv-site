@@ -115,7 +115,7 @@
 			// create gallery:
 			
 			// get item classes
-			var classes = galleryJ.attr('itemclasses');
+			let classes = galleryJ.attr('itemclasses');
 			let largeImageSize = galleryJ.attr('largeimagesize');
 			let largeImageSizeDefined = false;
 			if(largeImageSize != null) {
@@ -138,7 +138,7 @@
 			let containerJ = $("<div>");
 			containerJ.addClass('row')
 			for(let img of images) {
-				var imgJ = $(img);
+				let imgJ = $(img);
 				let aJ = $('<a>');
 				aJ.append(imgJ);
 				aJ.addClass(classes);

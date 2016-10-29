@@ -100,10 +100,17 @@ h1, .post-meta {
 a, a:visited {
     color: black;
     // color: hsla(25,95%,12%,1);
-    text-decoration: underline;
+    text-decoration: none;
     font-style: italic;
     // transition: color ease 0.7s;
     // -webkit-transition: color ease 0.7s;
+}
+
+html.underline {
+
+    a, a:visited {
+        text-decoration: underline;
+    }
 }
 
 a:focus, a:hover {
@@ -230,7 +237,7 @@ h1 {
 }
 
 article.preview {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
     p.readmore {
       font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
       margin-top: 1em;
@@ -248,6 +255,8 @@ div.article-preview {
         // max-width: 210px;
 
         h1.post-title {
+
+            // margin-top: -7px;
             font-size: 16px;
             // font-weight: medium;
             text-align: left;
@@ -296,7 +305,7 @@ div.article-preview {
             &:hover {
                 color: #02090e;
                 // color: white;
-                text-decoration: underline;
+                // text-decoration: underline;
             }
         }
     }
@@ -310,7 +319,7 @@ div.article-preview {
 
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 18px;
 
     max-width: 90px;
@@ -651,6 +660,10 @@ footer {
         margin-left: 7%;
         margin-right: 7%;
         margin-top: 0;
+
+        a {
+            font-style: normal;
+        }
     }
 }
 

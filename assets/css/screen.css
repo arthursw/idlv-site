@@ -40,8 +40,12 @@ h1,
 a,
 a:visited {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
   font-style: italic;
+}
+html.underline a,
+html.underline a:visited {
+  text-decoration: underline;
 }
 a:focus,
 a:hover {
@@ -123,7 +127,7 @@ h1 {
   max-width: 100%;
 }
 article.preview {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 article.preview p.readmore {
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
@@ -165,7 +169,6 @@ div.article-preview:hover h1.post-title {
 }
 div.article-preview:hover h1.post-title:hover {
   color: #02090e;
-  text-decoration: underline;
 }
 /* === Header === */
 #blog-logo {
@@ -173,7 +176,7 @@ div.article-preview:hover h1.post-title:hover {
   vertical-align: middle;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 18px;
   max-width: 90px;
 }
@@ -453,6 +456,9 @@ footer.site-footer {
   margin-left: 7%;
   margin-right: 7%;
   margin-top: 0;
+}
+footer.site-footer a {
+  font-style: normal;
 }
 footer section {
   font-family: "Helvetica Neue", "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
