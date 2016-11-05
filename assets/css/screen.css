@@ -175,16 +175,13 @@ div.article-preview:hover h1.post-title:hover {
   display: inline-block;
   vertical-align: middle;
   margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 60px;
+  margin-right: 0px;
+  margin-top: 45px;
   margin-bottom: 18px;
   max-width: 90px;
 }
 #blog-logo:hover {
   background-color: white;
-}
-#blog-logo img.bloglogo {
-  margin-left: 15px;
 }
 #blog-logo div.bloglogo {
   width: 150px;
@@ -575,8 +572,6 @@ a.archive-link {
   padding: 0.5em 0;
 }
 .pagination a {
-  color: #ffeb52;
-  background-color: black;
   padding: 0 10px 0 10px;
 }
 .pagination a:hover {
