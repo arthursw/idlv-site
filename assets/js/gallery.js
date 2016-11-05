@@ -98,7 +98,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             // find the size of the image: 
             // 1. look in 'image-size' attribute with format WIDTHxHEIGHT
-            // 2. otherwise use image.clientWidth, image.clientHeight
+            // 2. otherwise use image.naturalWidth, image.naturalHeight
             // 3. otherwise (possible?) find in image name (src): get string after underscore, before point (to remove extension) and parse with format WIDTHxHEIGHT
 
             var smallImageValues = img.getAttribute('imagesize');
@@ -110,7 +110,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             var caption = img.getAttribute('caption');
 
             if((smallImageValues == null || smallImageValues == '') && smallSize == null) {
-                smallSize = [img.clientWidth, img.clientHeight]
+                smallSize = [img.naturalWidth, img.naturalHeight]
             }
 
             if((smallImageValues == null || smallImageValues == '') && smallSize == null) {
