@@ -243,6 +243,7 @@ h2.blog-description li.nav-english,
 h2.blog-description li.nav-french,
 .nav li.nav-french {
   float: right;
+  font-size: 12px;
 }
 html.js h2.blog-description li.nav-english,
 html.js .nav li.nav-english {
@@ -274,6 +275,12 @@ html.js article.post.translated,
 html.js .nav-english.translated,
 html.js .nav-french.translated {
   opacity: 1;
+}
+html.js article.post .center,
+html.js .nav-english .center,
+html.js .nav-french .center {
+  display: flex;
+  justify-content: center;
 }
 section.footer-description {
   margin-bottom: 1em;

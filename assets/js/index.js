@@ -103,8 +103,10 @@
 		
 		// put content in an inner div
 
-		let galleryHeaderJ = $(".gallery.header")
-		$("article.post header").before(galleryHeaderJ)
+		console.log("header")
+		let headerJ = $(".header")
+		$("article.post header").before(headerJ)
+		console.log(headerJ)
 
 
 		let galleryJs = $(".gallery")

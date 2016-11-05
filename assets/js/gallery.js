@@ -140,7 +140,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             var largeSizeX = parseInt(largeSize[0], 10)
             var largeSizeY = parseInt(largeSize[1], 10)
 
-            console.log('large: ' + largeSizeX + 'x' + largeSizeY + ', small: ' + smallSizeX + 'x' + smallSizeY);
+            // console.log('large: ' + largeSizeX + 'x' + largeSizeY + ', small: ' + smallSizeX + 'x' + smallSizeY);
 
             // create slide object
             item = {
@@ -181,8 +181,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
         var eTarget = e.target || e.srcElement;
-        console.log("eTarget");
-        console.log(eTarget);
+        // console.log("eTarget");
+        // console.log(eTarget);
         // find root element of slide
         var clickedListItem = closest(eTarget, function(el) {
             return (el.tagName && el.tagName.toUpperCase() === 'A');
@@ -191,8 +191,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         if(!clickedListItem) {
             return;
         }
-        console.log("clickedListItem");
-        console.log(clickedListItem);
+        // console.log("clickedListItem");
+        // console.log(clickedListItem);
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
         var clickedGallery = clickedListItem.parentNode,
@@ -201,8 +201,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             nodeIndex = 0,
             index;
         
-        console.log("clickedGallery");
-        console.log(clickedGallery);
+        // console.log("clickedGallery");
+        // console.log(clickedGallery);
 
         for (var i = 0; i < numChildNodes; i++) {
             if(childNodes[i].nodeType !== 1) { 
@@ -298,7 +298,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             options.index = parseInt(index, 10);
         }
 
-        console.log("openPhotoSwipe")
+        // console.log("openPhotoSwipe")
         // exit if index not found
         if( isNaN(options.index) ) {
             return;
@@ -352,7 +352,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             }
 
             imageSrcWillChange = false;
-            console.log("beforeResize")
+            // console.log("beforeResize")
 
         });
 
@@ -370,7 +370,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 item.w = item.mediumImage.w;
                 item.h = item.mediumImage.h;
             }
-            console.log("gettingData: " + item.src)
+            // console.log("gettingData: " + item.src)
 
             // It doesn't really matter what will you do here, 
             // as long as item.src, item.w and item.h have valid values.
@@ -379,7 +379,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         });
 
-        console.log("gallery.init()")
+        // console.log("gallery.init()")
         // Note that init() method is called after gettingData event is bound
         gallery.init();
     };
