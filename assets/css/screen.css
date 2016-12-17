@@ -1,5 +1,15 @@
 @import url('//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans:200,300,400,600,400italic,600italic|Source+Code+Pro:200,300,400,500,600,700');
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+canvas.processing {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 /* === Core Styles === */
 .nav-english {
   display: none;
@@ -139,11 +149,16 @@ div.article-preview article h1.post-title {
   font-size: 16px;
   text-align: left;
   line-height: 1.75;
-}
-div.article-preview article h1.post-title a {
-  color: black;
   padding-right: 5px;
   padding-left: 5px;
+  background-color: white;
+}
+div.article-preview article h1.post-title a {
+  font-weight: 100;
+  letter-spacing: 1.2px;
+  text-align: center;
+  justify-content: center;
+  color: black;
   font-style: normal;
 }
 div.article-preview article h1.post-title a:hover {
@@ -174,10 +189,10 @@ div.article-preview:hover h1.post-title:hover {
 #blog-logo {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 50px;
-  margin-bottom: 18px;
+  margin-top: 55px;
+  margin-bottom: 10px;
   max-width: 90px;
 }
 #blog-logo:hover {
@@ -292,6 +307,22 @@ header.page-header {
   display: flex;
   flex-direction: row;
 }
+#site-head .nav a {
+  background-color: white;
+}
+#site-head .nav li a:focus {
+  color: black;
+  background-color: white;
+  outline: none;
+}
+#site-head .nav li a:focus:hover {
+  color: black;
+  background-color: #ffeb52;
+  outline: none;
+}
+#site-head .nav .nav-current a {
+  background-color: #ffeb52;
+}
 /* === Body === */
 main.content {
   margin: auto;
@@ -311,7 +342,7 @@ section.share {
   font-size: 0.75em;
 }
 section.share a {
-  color: rgba(52, 152, 219, 0.71);
+  color: #ffe100;
   background-color: white;
   text-decoration: none;
 }
@@ -416,9 +447,10 @@ article.post header .post-meta {
   display: inline-block;
 }
 article.post header h1.post-title {
-  font-family: "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-style: italic;
+  font-family: "Source Code Pro", "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;
+  font-style: inherit;
+  letter-spacing: 1.2px;
 }
 article.post header .post-meta {
   float: right;
@@ -463,6 +495,10 @@ footer.site-footer {
 }
 footer.site-footer a {
   font-style: normal;
+}
+footer.site-footer a:hover {
+  background-color: #ffeb52;
+  color: black;
 }
 footer section {
   font-family: "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;

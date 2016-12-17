@@ -1,5 +1,15 @@
 // This file is horribly organized. I'm going to revamp it in 1.5.
 
+canvas.processing {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
 
 // Todo for nav:
 // h2.blog-description {
@@ -261,12 +271,22 @@ div.article-preview {
             // font-weight: medium;
             text-align: left;
             line-height: 1.75;
+            
+            padding-right: 5px;
+            padding-left: 5px;
+
+            background-color: white;
+            
             // font-family: "Open Sans";
             a {
+                font-weight: 100;
+                letter-spacing: 1.2px;
+                text-align: center;
+                justify-content: center;
+
                 color: black;
                 // background-color: yellow;
-                padding-right: 5px;
-                padding-left: 5px;
+                
                 font-style: normal;
 
                 &:hover {
@@ -317,10 +337,10 @@ div.article-preview {
     display: inline-block;
     vertical-align: middle;
 
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 0px;
-    margin-top: 50px;
-    margin-bottom: 18px;
+    margin-top: 55px;
+    margin-bottom: 10px;
 
     max-width: 90px;
     
@@ -399,6 +419,7 @@ h2.blog-description, .nav {
         &.nav-english, &.nav-french {     // hide language button for those who don't have javascript: everything is in english
             float: right;
             font-size: 12px;
+
         }
     }
 }
@@ -463,6 +484,29 @@ header.article-header, header.page-header {
     margin-right: 7%;
     display: flex;
     flex-direction: row;
+
+    .nav {
+        a {
+            background-color: white;
+        }
+
+        li a:focus {
+            color: black;
+            background-color: white;
+            outline: none;
+            &:hover {
+                color: black;
+                background-color: @hoverColor;
+                outline: none;
+            }
+        }
+
+        .nav-current {
+            a {
+                background-color: @hoverColor;
+            }
+        }
+    }
 }
 /* === Body === */
 
@@ -490,7 +534,8 @@ section.share {
 
     a {
         // color: rgba(62, 92, 154, 0.43);
-        color: rgba(52, 152, 219, 0.71);
+        // color: rgba(52, 152, 219, 0.71);
+        color: hsla(53,100%,50%,1);
         background-color: white;
         text-decoration: none;
 
@@ -612,9 +657,13 @@ article.post {
             display: inline-block;
         }
         h1.post-title {
-            font-family: @baseFontFamily;
+            // font-family: @baseFontFamily;
+            // font-style: italic;
             font-weight: 300;
-            font-style: italic;
+
+            font-family: @headerFontFamily;
+            font-style: inherit;
+            letter-spacing: 1.2px;
         }
         .post-meta {
             float: right;
@@ -669,6 +718,10 @@ footer {
 
         a {
             font-style: normal;
+            &:hover {
+                background-color: @hoverColor;
+                color: black;
+            }
         }
     }
 }

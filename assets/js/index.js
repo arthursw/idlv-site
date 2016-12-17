@@ -16,7 +16,7 @@
 				var $date = $(date);
 				$date.html(
 					moment($date.attr('datetime'))
-					.format(lang == 'french' ? 'dddd, DD MMMM YYYY' : 'dddd, MMMM DD, YYYY')
+					.format(lang == 'french' ? 'MMMM YYYY' : 'MMMM YYYY')
 					);
 			});
 		}
@@ -196,6 +196,12 @@
 			//$("#blog-logo").prependTo("#site-head-content");
 
 
+		// Remove pagination if there is no need to display it (if there is only one page)
+
+		let paginationJ = $("nav.pagination")
+		if(paginationJ.children().length <= 1) {
+			paginationJ.hide()
+		}
 	});
 
 }(jQuery));
