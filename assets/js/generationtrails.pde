@@ -102,7 +102,7 @@ class Curve {
       return;
     }
     strokeWeight(0.5);
-    stroke(200);
+    stroke(128);
     point(ix, iy);
     grid[index] = 1;
     
