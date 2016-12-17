@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/photoswipe.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/default-skin/default-skin.css"}}" />
-    <link id="screen-styles" rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link id="screen-styles" data-site-url="{{@blog.url}}" rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
     {{#if pagination.next}}<link href="{{pageUrl pagination.next}}" rel="prefetch" />{{/if}}
 
@@ -68,7 +68,7 @@
     </header>
 
     {{!-- <canvas class="processing" data-processing-sources="{{asset "js/generationtrails.pde"}}"></canvas> --}}
-    <canvas class="processing" data-processing-sources="assets/js/generationtrails.pde"></canvas>
+    <canvas class="processing" data-processing-sources="{{@blog.url}}/assets/js/generationtrails.pde"></canvas>
     
     {{{body}}}
 

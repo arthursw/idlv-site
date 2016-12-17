@@ -12,6 +12,9 @@ canvas.processing {
   z-index: -1;
 }
 /* === Core Styles === */
+::selection {
+  background: #ffeb52;
+}
 .nav-english {
   display: none;
 }
@@ -163,6 +166,12 @@ div.article-preview article h1.post-title a {
   font-style: normal;
 }
 div.article-preview article h1.post-title a:hover {
+  background-color: #ffeb52;
+}
+div.article-preview article h1.post-title a:focus {
+  background-color: white;
+}
+div.article-preview article h1.post-title a:focus:hover {
   background-color: #ffeb52;
 }
 div.article-preview article div.tags {
@@ -458,6 +467,9 @@ article.post header h1.post-title {
 }
 article.post header .post-meta {
   float: right;
+}
+article.post.page {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 article.post.page header {
   display: none;

@@ -206,6 +206,7 @@
 		// Change style button:
 
 		let changeStyleBtnJ = $(".nav-changer-de-style")
+		let siteURL = $("#screen-styles").attr('data-site-url')
 		window.IDLVStyleIndex = 0
 		let nStyles = 2
 		changeStyleBtnJ.click(function(event) {
@@ -214,9 +215,9 @@
 				window.IDLVStyleIndex = 0
 			}
 			if(window.IDLVStyleIndex == 0) {
-				$("#screen-styles").attr('href', "assets/css/screen.css")
+				$("#screen-styles").attr('href', siteURL + "/assets/css/screen.css")
 			} else if(window.IDLVStyleIndex == 1) {
-				$("#screen-styles").attr('href', "assets/css/screen2.css")
+				$("#screen-styles").attr('href', siteURL + "/assets/css/screen2.css")
 			}
 			event.preventDefault();
 			event.stopImmediatePropagation();
