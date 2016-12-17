@@ -149,8 +149,8 @@ div.article-preview article h1.post-title {
   font-size: 16px;
   text-align: left;
   line-height: 1.75;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   background-color: white;
 }
 div.article-preview article h1.post-title a {
