@@ -459,6 +459,9 @@ article.post header h1.post-title {
 article.post header .post-meta {
   float: right;
 }
+article.post.page header {
+  display: none;
+}
 h2 {
   font-family: "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;
   margin-top: 2em;
