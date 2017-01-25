@@ -68,7 +68,9 @@
     </header>
 
     {{!-- <canvas class="processing" data-processing-sources="{{asset "js/generationtrails.pde"}}"></canvas> --}}
-    <canvas class="processing" data-processing-sources="{{@blog.url}}/assets/js/generationtrails.pde"></canvas>
+
+    {{!-- Reactivate generation: uncomment generationtrails.pde and processing.min.js --}}
+    {{!-- <canvas class="processing" data-processing-sources="{{@blog.url}}/assets/js/generationtrails.pde"></canvas> --}}
     
     {{{body}}}
 
@@ -96,7 +98,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/fr.js"></script>
     
-    <script type="text/javascript" src="{{asset "thirdparty/processing.min.js"}}"></script>
+    {{!-- <script type="text/javascript" src="{{asset "thirdparty/processing.min.js"}}"></script> --}}
 
     <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe.js"}}"></script>
     <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe-ui-default.min.js"}}"></script>

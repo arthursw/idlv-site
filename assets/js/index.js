@@ -97,9 +97,10 @@
 			return true;
 		})
 
-		$("#site-head .nav").append(menuItemJ)
-
-		setTimeout(function(){ menuItemJ.addClass('translated') }, 0)
+		// Reactivate language (english / french) button: uncomment the next two lines
+		
+		// $("#site-head .nav").append(menuItemJ)
+		// setTimeout(function(){ menuItemJ.addClass('translated') }, 0)
 		
 		// put content in an inner div
 
