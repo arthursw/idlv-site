@@ -15,7 +15,7 @@ canvas.processing {
 ::selection {
   background: #ffeb52;
 }
-.nav li.nav-adhrer {
+.nav li.nav-adhsion {
   float: right;
 }
 .nav-english {
@@ -762,16 +762,39 @@ table tfoot {
   border-top: 1px solid #ecf0f1;
 }
 /* === Media Queries === */
+@media only screen and (min-width: 1680px) {
+  main.content,
+  #site-head,
+  .site-footer {
+    margin-left: 14%;
+    margin-right: 14%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1680px) {
+  main.content,
+  #site-head,
+  .site-footer {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
 @media only screen and (min-width: 500px) and (max-width: 1024px) {
-  main.content {
+  main.content,
+  #site-head,
+  .site-footer {
     margin-left: 50px;
     margin-right: 50px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 500px) {
-  main.content {
+  main.content,
+  .site-footer {
     margin-left: 25px;
     margin-right: 25px;
+  }
+  #site-head {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   footer section span.copyright {
     display: block;

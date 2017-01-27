@@ -9,6 +9,9 @@
 
 	$(document).ready(function(){
 
+    // open subscribe link to a new tab:
+    $("li.nav-adhsion a").attr('target', '_blank')
+
 		let updateDate = function() {
 			let lang = localStorage.getItem('language')
 			moment.locale(lang == 'french' ? 'fr' : 'en');
@@ -23,7 +26,7 @@
 		updateDate();
 
 		let translate = function(to) {
-			
+
 			let from = to == 'english' ? 'french' : 'english';
 
 			localStorage.setItem('language', to);
@@ -47,7 +50,7 @@
 
 			$("["+from+"]").each(function() {
 				$(this).html($(this).html().replace($(this).attr(from), $(this).attr(to)))
-			})    
+			})
 
 
 			let translateTitle = function() {
@@ -82,7 +85,7 @@
 		linkJ.click(function(event){
 
 			parent = $(event.target).parent();
-			
+
 			if(parent.hasClass("nav-english")) {
 				parent.removeClass("nav-english").addClass("nav-french").find("a").text("Français");
 				translate('english');
@@ -98,10 +101,10 @@
 		})
 
 		// Reactivate language (english / french) button: uncomment the next two lines
-		
+
 		// $("#site-head .nav").append(menuItemJ)
 		// setTimeout(function(){ menuItemJ.addClass('translated') }, 0)
-		
+
 		// put content in an inner div
 
 		console.log("header")
@@ -116,7 +119,7 @@
 			let galleryJ = $(gallery)
 
 			// create gallery:
-			
+
 			// get item classes
 			let classes = galleryJ.attr('itemclasses');
 			let largeImageSize = galleryJ.attr('largeimagesize');
@@ -164,13 +167,13 @@
 
 				// if (!img.complete) {
 				// 	console.log("not yet loaded: " + img.src)
-					
+
 				// } else {
 				// 	console.log("already loaded:" + img.src)
 				// 	initializeImage(img, imgJ, aJ, true);
 				// }
 			}
-			galleryJ.append(containerJ);	
+			galleryJ.append(containerJ);
 		}
 
 
@@ -187,11 +190,11 @@
 
 		// Hide other language:
 		// let language = QueryString.lang;
-		
+
 		// let otherLang = lang == "fr" ? "en" : "fr";
 
 
-			// On the home page, move the blog icon inside the header 
+			// On the home page, move the blog icon inside the header
 			// for better relative/absolute positioning.
 
 			//$("#blog-logo").prependTo("#site-head-content");
