@@ -15,6 +15,9 @@ canvas.processing {
 ::selection {
   background: #ffeb52;
 }
+.nav li.nav-adhrer {
+  float: right;
+}
 .nav-english {
   display: none;
 }
@@ -207,6 +210,9 @@ div.article-preview:hover h1.post-title:hover {
 }
 #blog-logo:hover {
   background-color: white;
+}
+#blog-logo:focus {
+  background-color: transparent;
 }
 #blog-logo div.bloglogo {
   width: 150px;
