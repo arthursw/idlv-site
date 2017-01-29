@@ -114,7 +114,9 @@
 
 
 		let galleryJs = $(".gallery")
-		for(let gallery of galleryJs) {
+		// for(let gallery of galleryJs) {
+
+    	galleryJs.each( (index, gallery)=> {
 
 			let galleryJ = $(gallery)
 
@@ -139,29 +141,30 @@
 
 			// put all img into a linking to the large version of the image
 			// add all item classes to the a item
-			let images = galleryJ.find("img").slice(0);
+			// let images = galleryJ.find("img").slice(0);
+			let images = galleryJ.find("img");
 
 			let containerJ = $("<div>");
 			containerJ.addClass('row')
-			for(let img of images) {
+			// for(let img of images) {
+			images.each( (index, img)=> {
 				let imgJ = $(img);
 				let aJ = $('<a>');
 				aJ.append(imgJ);
 				aJ.addClass(classes);
 				containerJ.append(aJ);
+				
+				aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
 
 				imgJ.load( () => {
 					console.log("loaded: " + img.src)
 					let imgWidth = img.naturalWidth;
 					let imgHeight = img.naturalHeight;
-					console.log(imgJ)
-					console.log(aJ)
 					//initializeImage(this, this.width, this.height, imgJ, aJ);
 					// console.log("initializeImage: " + img.src)
 					// console.log("initializeImage: " + imgWidth + ", " + imgHeight)
 					imgJ.attr('imagesize', '' + (smallImageSizeDefined ? smallImageSize[0] : imgWidth) + 'x' + (smallImageSizeDefined ? smallImageSize[1] : imgHeight));
 					aJ.attr('imagesize', '' + (largeImageSizeDefined ? smallImageSize[0] : 2 * imgWidth) + 'x' + (largeImageSizeDefined ? smallImageSize[1] : 2 * imgHeight));
-					aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
 				});
 				imgJ.load();
 
@@ -172,9 +175,9 @@
 				// 	console.log("already loaded:" + img.src)
 				// 	initializeImage(img, imgJ, aJ, true);
 				// }
-			}
+			})
 			galleryJ.append(containerJ);
-		}
+		})
 
 
 
