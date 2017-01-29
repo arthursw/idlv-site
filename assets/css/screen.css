@@ -207,6 +207,7 @@ div.article-preview:hover h1.post-title:hover {
   margin-top: 55px;
   margin-bottom: 10px;
   max-width: 90px;
+  width: 100%;
 }
 #blog-logo:hover {
   background-color: white;
