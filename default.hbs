@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/photoswipe.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "thirdparty/photoswipe/default-skin/default-skin.css"}}" />
     <link id="screen-styles" data-site-url="{{@blog.url}}" rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset "assets/favicon.ico"}}" />
 
     {{#if pagination.next}}<link href="{{pageUrl pagination.next}}" rel="prefetch" />{{/if}}
 
@@ -24,7 +25,7 @@
     <script type="text/javascript">
 
         var QueryString = function () {
-          // This function is anonymous, is executed immediately and 
+          // This function is anonymous, is executed immediately and
           // the return value is assigned to QueryString!
           var query_string = {};
           var query = window.location.hash.substring(1);
@@ -42,7 +43,7 @@
             } else {
               query_string[pair[0]].push(decodeURIComponent(pair[1]));
             }
-          } 
+          }
           return query_string;
         }();
 
@@ -71,7 +72,7 @@
 
     {{!-- Reactivate generation: uncomment generationtrails.pde and processing.min.js --}}
     {{!-- <canvas class="processing" data-processing-sources="{{@blog.url}}/assets/js/generationtrails.pde"></canvas> --}}
-    
+
     {{{body}}}
 
     {{> photoswipe}}
@@ -94,15 +95,15 @@
             document.write('<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></'+'script>');
         }
     </script>
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/fr.js"></script>
-    
+
     {{!-- <script type="text/javascript" src="{{asset "thirdparty/processing.min.js"}}"></script> --}}
 
     <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe.js"}}"></script>
     <script type="text/javascript" src="{{asset "thirdparty/photoswipe/photoswipe-ui-default.min.js"}}"></script>
-    
+
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/gallery.js"}}"></script>
 

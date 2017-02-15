@@ -33,7 +33,8 @@
 			updateDate();
 
 			let lang = to == 'english' ? 'en' : 'fr'
-			window.location.hash = "lang=" + lang;
+      // todo: uncomment next line to put back multi-lang:
+			// window.location.hash = "lang=" + lang;
 			document.documentElement.className = "lang-" + lang + " js";
 
 			// Hide other language
@@ -153,7 +154,7 @@
 				aJ.append(imgJ);
 				aJ.addClass(classes);
 				containerJ.append(aJ);
-				
+
 				aJ.attr('href', img.src.replace(/.jpg$/, '_large.jpg'));
 
 				imgJ.load( () => {
