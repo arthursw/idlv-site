@@ -767,8 +767,8 @@ table tfoot {
   main.content,
   #site-head,
   footer.site-footer {
-    margin-left: 34%;
-    margin-right: 34%;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1680px) {
