@@ -1,9 +1,9 @@
 <nav class="pagination main" role="pagination">
     {{#if prev}}
-        <a class="newer-posts" href="{{pageUrl prev}}" english="Previous" french="Précédent"><i class="fa fa-chevron-circle-left"></i> Précédent</a>
+        <a class="newer-posts" href="{{page_url prev}}" english="Previous" french="Précédent"><i class="fa fa-chevron-circle-left"></i> Précédent</a>
     {{/if}}
     <span class="page-number">Page {{page}} / {{pages}}</span>
     {{#if next}}
-        <a class="older-posts" href="{{pageUrl next}}" english="Next" french="Suivant">Suivant <i class="fa fa-chevron-circle-right"></i></a>
+        <a class="older-posts" href="{{page_url next}}" english="Next" french="Suivant">Suivant <i class="fa fa-chevron-circle-right"></i></a>
     {{/if}}
 </nav>

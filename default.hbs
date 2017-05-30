@@ -18,7 +18,7 @@
     <link id="screen-styles" data-site-url="{{@blog.url}}" rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="icon" type="image/x-icon" href="{{asset "assets/favicon.ico"}}" />
 
-    {{#if pagination.next}}<link href="{{pageUrl pagination.next}}" rel="prefetch" />{{/if}}
+    {{#if pagination.next}}<link href="{{page_url pagination.next}}" rel="prefetch" />{{/if}}
 
     {{ghost_head}}
 
