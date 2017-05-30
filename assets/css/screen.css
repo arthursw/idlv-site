@@ -165,7 +165,7 @@ div.article-preview article h1.post-title {
 }
 div.article-preview article h1.post-title a {
   font-weight: 100;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.2px;
   text-align: center;
   justify-content: center;
   color: black;
@@ -787,9 +787,6 @@ table tfoot {
   footer.site-footer {
     margin-left: 14%;
     margin-right: 14%;
-  }
-  div.article-preview article h1.post-title a {
-    letter-spacing: 0.2px;
   }
 }
 @media only screen and (min-width: 620px) and (max-width: 1024px) {
