@@ -17,7 +17,8 @@
         <section class="post-content">
             {{content}}
         </section>
-
+    
+    {{!-- 
         <section class="share">
             <p class="info prompt"></p>
             <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
@@ -32,7 +33,7 @@
                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                 <i class="fa fa-2x fa-fw fa-google-plus-square"></i> <span class="hidden">Google+</span>
             </a>
-        </section>
+        </section> --}}
 
         <footer class="post-footer">
 {{!-- 
@@ -45,6 +46,17 @@
             </section>
             {{/if}}
  --}}
+
+            <nav class="pagination" role="pagination">
+                {{#prev_post}}
+                    <a class="newer-posts" href="{{url}}"><i class="fa fa-chevron-circle-left"></i> {{title}}</a>
+                {{/prev_post}}
+
+                {{#next_post}}
+                    <a class="older-posts" href="{{url}}">{{title}} <i class="fa fa-chevron-circle-right"></i></a>
+                {{/next_post}}
+            </nav>
+
         </footer>
 
         {{/post}}

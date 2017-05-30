@@ -54,7 +54,7 @@ canvas.processing {
 @tableFontFamily: @secondaryFontFamily;
 @linkColor: #3498db;
 @linkColorHover: darken(@linkColor, 50%);
-@borderColor: #ecf0f1;
+@borderColor: #e0e0e0;
 @subtleColor: rgba(0,0,0,0.05);
 @postmetaColor: #02090e;
 @gistBackgroundColor: #fdfdfd;
@@ -126,6 +126,10 @@ a, a:visited {
     font-style: italic;
     // transition: color ease 0.7s;
     // -webkit-transition: color ease 0.7s;
+}
+
+mark {
+    background: @highlightColor;
 }
 
 html.underline {
@@ -613,11 +617,10 @@ section.author p.bio {
 
 blockquote {
     font-family: @secondaryFontFamily;
-    font-size: 1.6em;
     font-weight: 300;
     line-height: 1.2em;
     font-style: italic;
-    text-transform: uppercase;
+
     border-left: .5em solid @subtleColor;
     margin-left: 1em;
     padding-left: 1em;
@@ -625,11 +628,10 @@ blockquote {
 
     blockquote p {
         font-family: @secondaryFontFamily;
-        font-size: 1.6em;
         font-weight: 300;
         line-height: 1.2em;
         font-style: italic;
-        text-transform: uppercase;
+
     }
 
 .post-meta {
@@ -675,8 +677,8 @@ h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-tit
 
 article.post {
     header {
-        border-top: 1px solid #ecf0f1;
-        border-bottom: 1px solid #ecf0f1;
+        border-top: 1px solid @borderColor;
+        border-bottom: 1px solid @borderColor;
         padding-top: 15px;
         padding-bottom: 15px;
         margin-bottom: 15px;
@@ -794,6 +796,10 @@ footer.post-footer {
     // margin-top: 1em;
     padding: 0;
     margin-top: 5px;
+
+    nav.pagination {
+        height: 25px;
+    }
 }
 
 /* === Navigation and Pagination === */
@@ -1060,11 +1066,27 @@ table {
     }
 }
 
-@media only screen and (min-width: 500px) and (max-width: 1024px) {
+@media only screen and (min-width: 620px) and (max-width: 1024px) {
 
     main.content, #site-head, footer.site-footer {
         margin-left: 50px;
         margin-right: 50px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 620px) {
+
+    #site-head {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    #site-head ul {
+        margin-left: 10px;
+    }
+
+    #site-head .nav li {
+        padding-left: 0;
     }
 }
 

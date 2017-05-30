@@ -206,7 +206,7 @@
 
 		// Remove pagination if there is no need to display it (if there is only one page)
 
-		let paginationJ = $("nav.pagination")
+		let paginationJ = $("nav.pagination.main")
 		if(paginationJ.children().length <= 1) {
 			paginationJ.hide()
 		}
