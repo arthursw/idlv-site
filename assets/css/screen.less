@@ -1154,19 +1154,21 @@ table {
         position: static
     }
 
-    .newer-posts {
-        margin-bottom: 10px
-    }
+    // .newer-posts {
+    //     margin-bottom: 10px
+    // }
 
-    .older-posts {
-        margin-top: 10px
-    }
+    // .older-posts {
+    //     margin-top: 10px
+    // }
 
     .page-number {
         display: block
     }
 
-
+    footer.site-footer {
+        border-top: none;
+    }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
@@ -1197,5 +1199,13 @@ table {
     main.content {
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    .older-posts, .newer-posts {
+        position: static
+    }
+
+    footer.site-footer {
+        border-top: none;
     }
 }
