@@ -1,6 +1,45 @@
-# Custom
+# IDLV theme based on [Vapor](https://github.com/sethlilly/Vapor)
 
-Compile & watch less: 
+## Usage
+
+### Image gallery
+
+#### Uploads
+
+The image gallery uses two versions of the image:
+ - the original image named 'imageName_large.jpg',
+ - and its thumbnail which is twice as small and named 'imageName.jpg'.
+
+Note that .jpg can be replaced with .png.
+
+To have both images on the server, there are two ways:
+ - you can upload both images using the `![]()` mardown synthaxe and the corresponding button in the view, once both images are uploaded you can delete the orginal image (named 'imageName_large.jpg') from the post content (the image will remain on the server),
+ - if you have access to the server, you can upload the original image and use a script to rename it (to 'imageName_large.jpg') and create the thumbnail ('imageName.jpg', twice as small)
+
+#### Gallery
+
+Use the `<div class="gallery" itemClasses="col-xs-24 col-sm-12 col-md-6 col-lg-3"></div>` tag to create a gallery.
+
+For example:
+
+```
+<div class="gallery" itemClasses="col-xs-24 col-sm-12 col-md-6 col-lg-3">
+![](/content/images/2017/04/analyse-de-l-air-2.jpg)
+![](/content/images/2017/04/cyanotype-2.jpg)
+![](/content/images/2017/04/Hackathon.jpg)
+![](/content/images/2017/04/Les-fusains-2.jpg)
+</div>
+```
+
+the `itemClasses` attribute will be transfered with javascript to all gallery items. This will affect how many item per row will be displayed in each screen sizes. The gallery lies on a grid of 24 cells.
+On the example above, images will take the full width on very small screen (`col-xs-24` meaning a column take 24 cells which corresponds to the entire width), half of the width on small screen (`col-sm-12` meaning there will be two images per row) ; there will be 4 images per row on a mdium screen (`col-md-6`) and 3 on  a large screen (`col-lg-3`).
+
+#### Internationalization
+
+Todo: documentation.
+
+
+## Compile & watch less: 
 
  - cd /Users/Arthur/Projects/IDLV/IDLV-site/content/themes/Vapor/assets/css
  - autoless .
