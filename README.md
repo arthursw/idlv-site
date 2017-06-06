@@ -31,8 +31,13 @@ For example:
 </div>
 ```
 
-the `itemClasses` attribute will be transfered with javascript to all gallery items. This will affect how many item per row will be displayed in each screen sizes. The gallery lies on a grid of 24 cells.
-On the example above, images will take the full width on very small screen (`col-xs-24` meaning a column take 24 cells which corresponds to the entire width), half of the width on small screen (`col-sm-12` meaning there will be two images per row) ; there will be 4 images per row on a mdium screen (`col-md-6`) and 3 on  a large screen (`col-lg-3`).
+The `itemClasses` attribute will be transfered with javascript to all gallery items. This will affect how many item per row will be displayed in each screen sizes. The gallery lies on a grid of 24 cells.
+
+On the example above, images will take:
+ - the full width on very small screen (`col-xs-24` meaning a column take 24 cells which corresponds to the entire width),
+ - half of the width on small screen (`col-sm-12` meaning there will be two images per row),
+ - there will be 4 images per row on a medium screen (`col-md-6`),
+ - and 3 on a large screen (`col-lg-3`).
 
 #### Internationalization
 
