@@ -4,5 +4,8 @@
   "author": {
   	"name": "Sethlilly-IDLV",
   	"email": "idlv.contact@gmail.com"
+  },
+  "config": {
+    "posts_per_page": 100
   }
 }
