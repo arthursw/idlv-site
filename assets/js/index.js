@@ -9,11 +9,16 @@
 
 	$(document).ready(function(){
 
+	let language = localStorage.getItem('language')
+	if(language == null || language == 'null') {
+		language = 'french'
+	}
+
     // open subscribe link to a new tab:
     $("li.nav-adhsion a").attr('target', '_blank')
 
-		let updateDate = function() {
-			let lang = localStorage.getItem('language')
+		let updateDate = function(lang) {
+			
 			moment.locale(lang == 'french' ? 'fr' : 'en');
 			$('.post-date').each(function(i, date) {
 				var $date = $(date);
@@ -23,14 +28,16 @@
 					);
 			});
 		}
-		updateDate();
+		updateDate(language);
 
 		let translate = function(to) {
-
+			if(to == null || to == 'null') {
+				to = 'french'
+			}
 			let from = to == 'english' ? 'french' : 'english';
 
 			localStorage.setItem('language', to);
-			updateDate();
+			updateDate(to);
 
 			let lang = to == 'english' ? 'en' : 'fr'
       // todo: uncomment next line to put back multi-lang:
@@ -77,7 +84,6 @@
 			$("article.post").addClass('translated')
 		}
 
-		let language = localStorage.getItem('language')
 		translate(language)
 
 		let linkJ = $('<a>').text(language == 'french' ? 'English' : 'Français').attr('href', '')

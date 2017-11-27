@@ -1,4 +1,8 @@
 {
-  "name": "Vapor",
-  "version": "1.4.0"
+  "name": "Vapor-IDLV",
+  "version": "1.4.0",
+  "author": {
+  	"name": "Sethlilly-IDLV",
+  	"email": "idlv.contact@gmail.com"
+  }
 }

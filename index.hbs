@@ -9,7 +9,7 @@
             <article class="preview">
                 <a class="post-thumb" href="{{url}}">
                     <header>
-                        <div> {{#if image}}<img class="post-thumb" src="{{image}}" alt="{{title}}" {{!-- nopin="nopin" --}} />{{/if}} </div>
+                        <div> {{#if feature_image}}<img class="post-thumb" src="{{img_url feature_image}}" alt="{{title}}" {{!-- nopin="nopin" --}} />{{/if}} </div>
                         <div class="tags"> {{#if tags}} {{tags prefix="" separator=", "}} {{/if}} </div>
                         <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
                         
